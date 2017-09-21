@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="moviedb_api_key"></string>
+    <string name="api_fail">API Call Failed. Please try reloading app with available Network</string>
+    <string name="database_fail">No Favorites in the database</string>
+    <string name="title_activity_main">Movies App</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_movies_fragment">Movies</string>
+    <string name="title_activity_details">DetailsActivity</string>
+    <string name="themeSetting">currentTheme</string>
+    <string name="favSetting">favorites</string>
+    <string name="sort">current_sort</string>
+    <string name="sort_top">top</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="review">review</string>
+    <string name="user_rating">User Rating: </string>
+    <string name="release_date">Release Date: </string>
+    <string name="adult_title">Adult: </string>
+    <string name="plot_title">Plot Synopsis</string>
+    <string name="trailers">Trailers</string>
+    <string name="review_title">Reviews</string>
+    <string name="favMov">Favorite Movies</string>
+    <string name="reviews">reviews</string>
+    <string name="video">videos</string>
+    <string name="mess_up">Something went wrong</string>
+    <string name="loading">Loading</string>
+    <string name="popular_prefix">Popular</string>
+    <string name="top_prefix">TopRate</string>
+    <string name="insert">Favorite Saved :)</string>
+    <string name="delete">Favorite Deleted :)</string>
+    <string name="sort_fav">fav</string>
+    <string name="sort_pop">pop</string>
+    <string name="popularMovieIntent">PopularMovie</string>
+    <string name="topRatedIntent">TopRatedMovie</string>
+    <string name="detailIntent">DetailResult</string>
+</resources>

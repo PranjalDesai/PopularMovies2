@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.pranjaldesai.popularmovies2.DetailsActivity"
+    tools:showIn="@layout/activity_details">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:id="@+id/ivPoster"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+        <TextView
+            android:id="@+id/userRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_rating"
+            tools:text="User Rating: "
+            android:contentDescription="@string/user_rating"
+            android:textStyle="bold"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toRightOf="@+id/ivPoster"
+            app:layout_constraintTop_toTopOf="@+id/ivPoster"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="8.5"
+            app:layout_constraintLeft_toRightOf="@+id/userRating"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintTop_toTopOf="@+id/userRating"
+            android:textStyle="normal"
+            android:id="@+id/userRatingTV"
+            android:layout_marginStart="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/release_date"
+            android:textStyle="bold"
+            tools:text="Release Date: "
+            android:contentDescription="@string/release_date"
+            android:id="@+id/release"
+            app:layout_constraintLeft_toLeftOf="@+id/userRating"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/userRating" />
+
+        <TextView
+            android:id="@+id/releaseTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            tools:text="1994-09-23"
+            app:layout_constraintLeft_toRightOf="@+id/release"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintTop_toTopOf="@+id/release"
+            android:layout_marginStart="4dp" />
+
+        <TextView
+            android:id="@+id/adult_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adult_title"
+            android:textStyle="bold"
+            tools:text="Adult: "
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/release"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/release" />
+
+        <TextView
+            android:id="@+id/adultTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            tools:text="Yes"
+            android:layout_marginTop="0dp"
+            app:layout_constraintLeft_toRightOf="@+id/adult_title"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintTop_toTopOf="@+id/adult_title" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="?attr/colorPrimary"
+            android:layout_marginRight="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/ivPoster"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:id="@+id/plotCardView">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/synopsis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/plot_title"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/plot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/synopsis"
+                    android:layout_margin="8dp"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:id="@+id/trailerCardView"
+            app:cardElevation="8dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="?attr/colorAccent"
+            android:layout_marginRight="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/plotCardView"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/trailers"
+                    android:id="@+id/trailer_title"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rv_trailer_view"
+                    android:layout_margin="8dp"
+                    android:layout_below="@id/trailer_title"
+                    android:layout_gravity="center_horizontal">
+                </android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:id="@+id/reviewsCardView"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="?attr/colorPrimary"
+            android:layout_marginRight="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/trailerCardView"
+            android:layout_marginStart="16dp"
+            app:cardElevation="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/review_title"
+                    android:id="@+id/review_title"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rv_review_view"
+                    android:layout_margin="8dp"
+                    android:layout_below="@id/review_title"
+                    android:layout_gravity="center_horizontal">
+                </android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>
