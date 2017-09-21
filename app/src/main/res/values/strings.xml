@@ -33,6 +33,8 @@
     <string name="top_prefix">TopRate</string>
     <string name="insert">Favorite Saved :)</string>
     <string name="delete">Favorite Deleted :)</string>
+    <string name="scroll">scrollPosition</string>
+    <string name="data">mData</string>
     <string name="sort_fav">fav</string>
     <string name="sort_pop">pop</string>
     <string name="popularMovieIntent">PopularMovie</string>

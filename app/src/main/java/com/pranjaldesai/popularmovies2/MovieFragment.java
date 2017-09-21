@@ -10,6 +10,8 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -52,7 +54,9 @@ public class MovieFragment extends Fragment implements MovieAdaptor.GridItemClic
     private String mData="pop";
     private MovieAdaptor movieAdaptor;
     private RecyclerView mRecylerView;
+    private GridLayoutManager gridLayoutManager;
     private View mView;
+    private static int scrollPosition;
     private Activity activity;
     private SharedPreferences mPreferences;
     private BottomSheetBehavior mBottomSheetBehavior;
@@ -149,7 +153,7 @@ public class MovieFragment extends Fragment implements MovieAdaptor.GridItemClic
         apiFailTextView= view.findViewById(R.id.apiFailTV);
 
         mRecylerView = view.findViewById(R.id.rv_movie_view);
-        GridLayoutManager gridLayoutManager= new GridLayoutManager(getContext(),3);
+        gridLayoutManager= new GridLayoutManager(getContext(),3);
         mRecylerView.setLayoutManager(gridLayoutManager);
         mRecylerView.setHasFixedSize(true);
 
@@ -293,6 +297,23 @@ public class MovieFragment extends Fragment implements MovieAdaptor.GridItemClic
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt(getString(R.string.scroll),gridLayoutManager.findFirstVisibleItemPosition());
+        outState.putString(getString(R.string.data), mData);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(savedInstanceState!=null) {
+            scrollPosition = savedInstanceState.getInt(getString(R.string.scroll));
+            mData = savedInstanceState.getString(getString(R.string.data));
+        }
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
 
@@ -303,6 +324,7 @@ public class MovieFragment extends Fragment implements MovieAdaptor.GridItemClic
         buildFavorites();
         setShaded();
         updateRecyclerView(mData);
+        mRecylerView.scrollToPosition(scrollPosition);
 
     }
 
